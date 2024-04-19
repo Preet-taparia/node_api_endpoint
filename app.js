@@ -6,7 +6,7 @@ const check_doctor_route = require('./routes/docAvailability');
 app.use("/doctor-availability", check_doctor_route);
 
 app.get("/",(req,res)=>{
-  req.send("Nothing here go to '/doctor-availability' with params in date=YYYY-MM-HH&time=HH:MM format");
+  return res.send("Nothing here, go to '/doctor-availability' with params date=YYYY-MM-HH&time=HH:MM format");
 })
 
 app.listen(process.env.PORT, () => {
