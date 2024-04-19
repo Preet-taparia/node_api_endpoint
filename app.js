@@ -5,6 +5,10 @@ const check_doctor_route = require('./routes/docAvailability');
 
 app.use("/doctor-availability", check_doctor_route);
 
-app.listen(3333, () => {
-    console.log("Server is running on port 3333");
+app.get("/",(req,res)=>{
+  req.send("Nothing here go to '/doctor-availability' with params in date=YYYY-MM-HH&time=HH:MM format");
+})
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
 });
